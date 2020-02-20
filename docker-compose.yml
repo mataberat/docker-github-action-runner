@@ -1,17 +1,15 @@
-version: '3.1'
+version: '3.3'
 
 services:
   docker-github-runner:
-      env_file:
-        - 'vars.env'
       image: mataberat/github-runner:latest
       restart: always
-      container_name: "${runnerName}"
+      container_name: $runnerName
       environment:
-        RUNNER_NAME: "${runnerName}"
-        REPO_URL: "${repoURL}"
-        RUNNER_TOKEN: "${runnerToken}"
-        RUNNER_WORKDIR: "${runnerWorkDir}"
+        RUNNER_NAME: $runnerName
+        REPO_URL: $repoURL
+        RUNNER_TOKEN: $runnerToken
+        RUNNER_WORKDIR: $runnerWorkDir
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
-        - "${runnerWorkDir}:/tmp/github-runner"
+        - $runnerWorkDir:/tmp/github-runner
