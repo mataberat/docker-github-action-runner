@@ -6,10 +6,10 @@ Run Github Action Runner self-hosted on your machine using Docker container.
 
 Set your environment variables on `.env` file or using `export`.
 ```
-runnerName=<yourRunnerName>
-repoURL=<yourRepositoryURL>
-runnerToken=<yourRepositoryToken>
-runnerWorkDir=<yourRunnerWorkDirectory>
+export runnerName=<yourRunnerName>
+export repoURL=<yourRepositoryURL>
+export runnerToken=<yourRepositoryToken>
+export runnerWorkDir=<yourRunnerWorkDirectory>
 ```
 
 Start your Action Runner manually using Docker CLI command.
