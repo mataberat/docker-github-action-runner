@@ -11,6 +11,7 @@ services:
         RUNNER_NAME: "${runnerName}"
         REPO_URL: "${repoURL}"
         RUNNER_TOKEN: "${runnerToken}"
+        RUNNER_WORKDIR: "${runnerWorkDir}"
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
-        # - /tmp/github-runner:/tmp/github-runner
+        - "${runnerWorkDir}:/tmp/github-runner"
